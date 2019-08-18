@@ -23,6 +23,6 @@ output {
    elasticsearch {
        hosts => [ "elasticsearch:9200" ]
        sniffing => true
-       index => "squid-logs"
+       index => "squid-logs-%{+YYYY.MM.dd}"
    }
 }
