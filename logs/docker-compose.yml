@@ -37,4 +37,5 @@ services:
       - ./logstash:/etc/logstash:ro
     ports:
       - 1025:1025
-      - 5140:5140
+      - 5140:5140/udp
+      - 5140:5140/tcp
