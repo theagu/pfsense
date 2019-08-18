@@ -21,7 +21,7 @@ filter {
 
 output {
    elasticsearch {
-       hosts => [ "elasticsearch:9200" ]
+       hosts => [ "localhost:9200" ]
        sniffing => true
        index => "squid-logs-%{+YYYY.MM.dd}"
    }
