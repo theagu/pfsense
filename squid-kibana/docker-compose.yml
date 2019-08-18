@@ -5,7 +5,5 @@ services:
     command: logstash -f /etc/logstash/conf.d
     volumes:
       - ./logstash:/etc/logstash:ro
-    links:
-      - elasticsearch
     ports:
       - 1025:1025
