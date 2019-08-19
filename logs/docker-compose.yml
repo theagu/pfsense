@@ -34,7 +34,7 @@ services:
     image: logstash:7.3.0
     command: logstash -f /etc/logstash/conf.d
     volumes:
-      - ./logstash:/etc/logstash:ro
+      - ./logstash-squid:/etc/logstash:ro
     ports:
       - 1025:1025
     
@@ -42,7 +42,7 @@ services:
     image: logstash:7.3.0
     command: logstash -f /etc/logstash/conf.d
     volumes:
-      - ./logstash:/etc/logstash:ro
+      - ./logstash-firewall:/etc/logstash:ro
     ports:
       - 5140:5140/udp
       - 5140:5140/tcp
