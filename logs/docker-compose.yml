@@ -30,12 +30,19 @@ services:
     environment:
           - "ELASTICSEARCH_URL=http://localhost:9200"
   
-  logstash:
+  logstash-squid:
     image: logstash:7.3.0
     command: logstash -f /etc/logstash/conf.d
     volumes:
       - ./logstash:/etc/logstash:ro
     ports:
       - 1025:1025
+    
+  logstash-firewall:
+    image: logstash:7.3.0
+    command: logstash -f /etc/logstash/conf.d
+    volumes:
+      - ./logstash:/etc/logstash:ro
+    ports:
       - 5140:5140/udp
       - 5140:5140/tcp
